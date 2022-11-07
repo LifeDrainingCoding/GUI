@@ -1,7 +1,9 @@
 package com.example.gui;
 import javafx.application.Application;
+import javafx.geometry.Pos;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
@@ -20,6 +22,21 @@ public class Main extends Application{
 
     @Override
     public void start(Stage stage) {
+        Button left = new Button("Left");
+        BorderPane.setAlignment(left, Pos.CENTER);
+
+        Button right = new Button("Right");
+        BorderPane.setAlignment(right, Pos.BOTTOM_LEFT);
+
+        Button top = new Button("Top");
+        BorderPane.setAlignment(top, Pos.CENTER);
+
+        Button bottom = new Button("Bottom");
+        BorderPane.setAlignment(bottom, Pos.CENTER);
+
+        Button center = new Button("Center");
+
+
 
         Button btn = new Button();
         btn.setText("Click!");
@@ -43,10 +60,10 @@ public class Main extends Application{
         txt.setLayoutY(400);
         txt.setFill(Color.BLUE);
         Group root = new Group();
-        root.getChildren().addAll(btn,txt);
+        root.getChildren().addAll(btn,txt,center, top, right, bottom, left);
         Scene scene = new Scene(root);
         scene.setFill(Color.BLUE);
-        scene.setFill(Color.DARKRED);
+        scene.setFill(Color.WHITE);
         stage.setScene(scene);
 
         stage.setTitle("Hello JavaFX");
